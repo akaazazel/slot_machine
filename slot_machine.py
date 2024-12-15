@@ -58,6 +58,7 @@ class SlotMachine:
 def main():
     print("\n---SLOT MACHINE---")
     print("'q' - quit. 'bal' - balance")
+    slot_machine = None
     while True:
         balance = input("Enter the amount to deposit: ").strip().lower()
 
@@ -84,14 +85,16 @@ def main():
             print("Thanks for playing!")
             quit()
         elif bet_amount == "bal":
-            print(f":> Balance: ${balance}")
+            print(f":> Balance: ${slot_machine.balance}")
             continue
         else:
             print("Invalid input! Try again.")
             continue
 
-        if bet_amount > balance:
+        if bet_amount > slot_machine.balance:
             print(f":> You don't have ${bet_amount} in your balance! Try again.")
+        elif bet_amount < 10:
+            print("Amount must be greater than $10.")
         else:
             slot_machine.balance -= bet_amount
             print(f"You are betting ${bet_amount}\n")
