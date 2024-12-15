@@ -9,7 +9,7 @@ This is a simple slot machine game where you can deposit a certain amount of mon
 
 ## Preview
 
-```python
+```
 --- SLOT MACHINE ---
 'q' - Quit. 'bal' - Balance
 Enter the amount to deposit: 1000
